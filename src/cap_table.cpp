@@ -4,6 +4,7 @@ CapTable::CapTable(const eosio::name& self,
                    const eosio::name& first_receiver,
                    const eosio::datastream<const char*>& ds)
     : eosio::contract(self, first_receiver, ds)
+    , migrations(self, self.value)
 {
 }
 

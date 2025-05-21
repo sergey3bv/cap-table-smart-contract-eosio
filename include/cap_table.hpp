@@ -2,6 +2,8 @@
 #include <eosio/name.hpp>
 #include <eosio/action.hpp>
 
+#include "table/migration.hpp"
+
 class [[eosio::contract("cap.table")]] CapTable : public eosio::contract
 {
 public:
@@ -13,4 +15,7 @@ public:
     void hi(const eosio::name& nm);
 
     using hi_action = eosio::action_wrapper<"hi"_n, &CapTable::hi>;
+
+private:
+    Migration_T migrations;
 };
