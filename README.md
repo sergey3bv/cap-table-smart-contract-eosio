@@ -1,5 +1,8 @@
 # Cap table contract
 
+An attempt to fix [812](https://github.com/hypha-dao/hypha-web/issues/812)
+issue from Hypha-web.
+
 ## Build
 
 Generate build system:
