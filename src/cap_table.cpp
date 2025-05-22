@@ -47,3 +47,18 @@ void CapTable::remove_user(const eosio::name& user)
 
     (void) this->migrations.erase(existing);
 }
+
+void CapTable::migrate_user(const eosio::name& user)
+{
+    eosio::require_auth(this->get_self());
+
+    const Migration_T::const_iterator existing =
+        this->migrations.find(user.value);
+    eosio::check(existing != this->migrations.cend(),
+                 user.to_string() + " is not added");
+
+    this->migrations.modify(existing, eosio::same_payer, [](Migration& row)
+    {
+        row.migrated = true;
+    });
+}

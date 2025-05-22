@@ -20,6 +20,9 @@ public:
     [[eosio::action("remove")]]
     void remove_user(const eosio::name& user);
 
+    [[eosio::action("migrate")]]
+    void migrate_user(const eosio::name& user);
+
 private:
     Migration_T migrations;
 };
