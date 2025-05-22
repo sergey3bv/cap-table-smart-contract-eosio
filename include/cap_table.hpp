@@ -1,6 +1,7 @@
 #include <eosio/contract.hpp>
 #include <eosio/name.hpp>
 #include <eosio/action.hpp>
+#include "eosio/asset.hpp"
 
 #include "table/migration.hpp"
 
@@ -11,10 +12,13 @@ public:
              const eosio::name& first_receiver,
              const eosio::datastream<const char*>& ds);
 
-    [[eosio::action("hi")]]
-    void hi(const eosio::name& nm);
+    [[eosio::action("add")]]
+    void add_user(const eosio::name& user,
+                  const eosio::extended_asset balance,
+                  const eosio::checksum160 eth_address);
 
-    using hi_action = eosio::action_wrapper<"hi"_n, &CapTable::hi>;
+    [[eosio::action("remove")]]
+    void remove_user(const eosio::name& user);
 
 private:
     Migration_T migrations;
