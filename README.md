@@ -3,6 +3,12 @@
 An attempt to fix [812](https://github.com/hypha-dao/hypha-web/issues/812)
 issue from Hypha-web.
 
+To completely solve the issue, it would be nice to get more discreet
+explanation of the task. For example, issues for Ethereum smart-contracts (e.g.
+issues [743](https://github.com/hypha-dao/hypha-web/issues/743) or
+[742](https://github.com/hypha-dao/hypha-web/issues/742)) have great
+description, so it will be nice to add similar explanation for this issue.
+
 ## Build
 
 Generate build system:
